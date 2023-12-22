@@ -11,7 +11,12 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
+import { Inter } from "next/font/google";
 
+const inter = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin-ext"],
+});
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -42,7 +47,7 @@ export default function NavBar() {
           className="sm:hidden"
         /> */}
         <Link href="/">
-          <NavbarBrand className="flex font-thin">
+          <NavbarBrand className="flex font-medium text-lg">
             <svg
               width="35"
               height="31"
@@ -87,7 +92,7 @@ export default function NavBar() {
               />
             </svg>
 
-            <p className="font-bold text-inherit">Mouhami</p>
+            <p className={inter.className}>Mouhami</p>
           </NavbarBrand>
         </Link>
       </NavbarContent>

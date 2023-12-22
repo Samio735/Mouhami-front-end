@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SearchCard() {
   return (
     <Link
-      className="flex w-52  text-left min-w-[70vw] hover:shadow-lg shadow-sm transition-all"
+      className="flex w-52  text-left min-w-[70vw] hover:shadow-lg active:shadow-inner  shadow-sm transition-all"
       href={"/avocat/id"}
     >
       <div className="w-80 h-40 overflow-hidden">
@@ -17,7 +17,7 @@ export default function SearchCard() {
       </div>
       <div className="p-2 w-[80%]">
         <div className="flex  gap-8 items-center py-4">
-          <h1 className="text-3xl font-semibold">Said Nouasria</h1>
+          <h1 className="text-2xl font-semibold">Said Nouasria</h1>
           <div className="flex gap-2 items-center">
             <svg
               width="20"
@@ -49,7 +49,7 @@ export default function SearchCard() {
               </defs>
             </svg>
 
-            <h3 className="text-xl">Bejaia</h3>
+            <h3 className="">Bejaia</h3>
           </div>
           <div className="flex gap-2 items-center">
             <svg
@@ -73,7 +73,7 @@ export default function SearchCard() {
               />
             </svg>
 
-            <h3 className="text-xl">Fr, Ar</h3>
+            <h3 className="">Fr, Ar</h3>
           </div>
           <div className="flex gap-2 items-center">
             <svg
@@ -92,7 +92,7 @@ export default function SearchCard() {
               />
             </svg>
 
-            <h3 className="text-xl">4,8/5</h3>
+            <h3 className="">4,8/5</h3>
           </div>
         </div>
         <div className="flex gap-2">
