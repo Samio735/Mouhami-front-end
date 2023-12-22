@@ -38,13 +38,32 @@ const config: Config = {
           large: "0px", // rounded-large
         },
         borderWidth: {
-          small: "1px", // border-small
-          medium: "1px", // border-medium
-          large: "2px", // border-large
+          small: "0px", // border-small
+          medium: "5px", // border-medium
+          large: "10px", // border-large
         },
       },
       themes: {
-        light: {},
+        light: {
+          colors: {
+            primary: {
+              100: "#E5FBE3",
+              200: "#C8F8C7",
+              300: "#A6EBAB",
+              400: "#88D896",
+              500: "#61BF7B",
+              600: "#46A469",
+              700: "#30895A",
+              800: "#1E6E4C",
+              900: "#125B43",
+
+              DEFAULT: "#61BF7B",
+              foreground: "#61BF7B",
+            },
+
+            focus: "#61BF7B",
+          },
+        },
         dark: {},
       },
     }),
