@@ -3,6 +3,19 @@ import Image from "next/image";
 import Search from "../Search";
 import { Button } from "@nextui-org/react";
 import Review from "./Review";
+import { GoogleMap } from "react-google-maps";
+import withScriptjs from "react-google-maps/lib/withScriptjs";
+import withGoogleMap from "react-google-maps/lib/withGoogleMap";
+
+const Map = () => {
+  return (
+    <GoogleMap
+      defaultZoom={10}
+      defaultCenter={{ lat: 36.752887, lng: 3.042048 }}
+    />
+  );
+};
+const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function Avocat() {
   const reviews = ["", "", "", ""];
@@ -69,14 +82,14 @@ export default function Avocat() {
           </Button>
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold mb-2">Localisation</p>
-            <div
-              className="border-4 border-primary1 w-full h-80"
-              style={{
-                backgroundImage: "url(/map.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
+            <div className="border-4 border-primary1 w-full h-80">
+              <WrappedMap
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+              />
+            </div>
           </div>
         </div>
       </div>
