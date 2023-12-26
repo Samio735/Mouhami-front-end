@@ -1,3 +1,4 @@
+import { Pagination } from "@nextui-org/react";
 import ProfileCard from "./ProfileCard";
 import Search from "./Search";
 import SearchCard from "./SearchCard";
@@ -54,6 +55,7 @@ export default function Hero() {
         {data.map((item, index) => (
           <SearchCard key={index} />
         ))}
+        <Pagination total={10} initialPage={1} />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Review from "./Review";
 import { GoogleMap } from "react-google-maps";
 import withScriptjs from "react-google-maps/lib/withScriptjs";
 import withGoogleMap from "react-google-maps/lib/withGoogleMap";
+import Link from "next/link";
 
 const Map = () => {
   return (
@@ -73,13 +74,15 @@ export default function Avocat() {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <Button
-            variant="solid"
-            color="primary"
-            className="text-white  text-lg"
-          >
-            Prendre un Rendez-vous
-          </Button>
+          <Link href={`/avocat/rendez-vous`} className="w-full">
+            <Button
+              variant="solid"
+              color="primary"
+              className="text-white  text-lg w-full"
+            >
+              Prendre un Rendez-vous
+            </Button>
+          </Link>
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold mb-2">Localisation</p>
             <div className="border-4 border-primary1 w-full h-80">

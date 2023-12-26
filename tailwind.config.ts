@@ -47,7 +47,7 @@ const config: Config = {
         light: {
           colors: {
             primary: {
-              100: "#E5FBE3",
+              100: "#ffffff",
               200: "#C8F8C7",
               300: "#A6EBAB",
               400: "#88D896",
@@ -58,7 +58,7 @@ const config: Config = {
               900: "#125B43",
 
               DEFAULT: "#61BF7B",
-              foreground: "#61BF7B",
+              foreground: "#ffffff",
             },
 
             focus: "#61BF7B",

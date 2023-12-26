@@ -99,10 +99,10 @@ export default function NavBar() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="/joindre">Joindre</Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Sign up</Link>
+          <Link href="/login">Se connecter</Link>
         </NavbarItem>
         {/* <NavbarItem>
           <Button as={Link} href="#" variant="solid">
