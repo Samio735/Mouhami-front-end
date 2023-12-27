@@ -1,8 +1,10 @@
-export default function Review() {
+import { Review } from "@/types";
+
+export default function Review({ review }: { review: Review }) {
   return (
     <div className="w-full border border-primary1 p-4  flex flex-col gap-2">
       <div className="flex gap-1 items-center">
-        <h2 className="font-semibold me-2">Said Nouasria</h2>
+        <h2 className="font-semibold me-2">{review.reviewerName}</h2>
         <svg
           width="18"
           height="17"
@@ -19,13 +21,9 @@ export default function Review() {
           />
         </svg>
 
-        <h3 className="">4,8</h3>
+        <h3 className="">{review.rating}</h3>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur. Pulvinar sagittis duis eu diam
-        pharetra id venenatis. Molestie ipsum ligula gravida adipiscing aliquam
-        volutpat in varius.
-      </p>
+      <p>{review.comment}</p>
     </div>
   );
 }

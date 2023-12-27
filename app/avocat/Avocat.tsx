@@ -1,12 +1,12 @@
 "use client";
-import Image from "next/image";
-import Search from "../Search";
+
 import { Button } from "@nextui-org/react";
 import Review from "./Review";
 import { GoogleMap } from "react-google-maps";
 import withScriptjs from "react-google-maps/lib/withScriptjs";
 import withGoogleMap from "react-google-maps/lib/withGoogleMap";
 import Link from "next/link";
+import { Lawyer } from "@/types";
 
 const Map = () => {
   return (
@@ -19,14 +19,68 @@ const Map = () => {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function Avocat() {
-  const reviews = ["", "", "", ""];
+  const avocat: Lawyer = {
+    id: 1,
+    name: "Said Nouasria",
+    email: "s_nouasria@estin.dz",
+    phone: "0556 043 325",
+    wilaya: "Boumerdes",
+    languages: ["Français", "Arabe", "Anglais"],
+    specialities: [
+      "Droit Civil",
+      "Droit Penal",
+      "Droit Commercial",
+      "Droit de Travail",
+      "Droit de Famille",
+    ],
+    rating: 4.8,
+    reviews: [
+      {
+        id: 1,
+        reviewerId: "1",
+        rating: 5,
+        comment: "Very nice person",
+        reviewerName: "Ahmed",
+      },
+      {
+        id: 2,
+        reviewerId: "2",
+        rating: 4.5,
+        comment: "Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum",
+        reviewerName: "Jamal",
+      },
+      {
+        id: 3,
+        reviewerId: "3",
+        rating: 4.5,
+        comment: "Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum",
+        reviewerName: "Ahmed",
+      },
+      {
+        id: 4,
+        reviewerId: "4",
+        rating: 4.5,
+        comment: "Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum",
+        reviewerName: "Samir",
+      },
+      {
+        id: 5,
+        reviewerId: "5",
+        rating: 4.5,
+        comment: "Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum",
+        reviewerName: "Ahmed",
+      },
+    ],
+  };
+  const bgImage = avocat.photo ? `url(${avocat.photo})` : `url(/avatar.png)`;
+  console.log(avocat.photo);
   return (
     <div className=" flex flex-col items-center">
-      <div className="grid grid-cols-3 gap-20 max-w-[80vw] my-16">
+      <div className="grid grid-cols-3 gap-20 max-w-[80vw] my-12">
         <div
           className="border-4 relative border-primary1 w-full  text-lg"
           style={{
-            backgroundImage: "url(/avatar.png)",
+            backgroundImage: bgImage,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -52,24 +106,35 @@ export default function Avocat() {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-3xl font-semibold">Said Nouasria</h1>
+          <h1 className="text-3xl font-semibold">{avocat.name}</h1>
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold">Numero De Telephone</p>
-            <p> 0556 043 325</p>
+            <p> {avocat.phone}</p>
           </div>
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold">Email</p>
-            <p>s_nouasria@estin.dz</p>
+            <p>{avocat.email}</p>
           </div>
           <div className="flex flex-col ">
-            <p className="text-sec1 font-semibold">Langue</p>
-            <p>Français , Arabe , Anglais</p>
+            <p className="text-sec1 font-semibold">Langues</p>
+            <p>
+              {avocat.languages.map((lang, i) => (
+                <span className="mr-2">
+                  {lang}
+                  {i < avocat.languages.length - 1 && ","}
+                </span>
+              ))}
+            </p>
           </div>
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold">Specialités</p>
             <p>
-              Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum,
-              Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum.
+              {avocat.specialities.map((spec, i) => (
+                <span className="mr-2">
+                  {spec}
+                  {i < avocat.specialities.length - 1 && ","}
+                </span>
+              ))}
             </p>
           </div>
         </div>
@@ -96,11 +161,11 @@ export default function Avocat() {
           </div>
         </div>
       </div>
-      <div className="w-[80vw]">
+      <div className="w-[80vw] mb-10">
         <p className="text-sec1 font-semibold mb-2">Evaluations</p>
         <div className="grid grid-cols-3 gap-10 gap-y-7">
-          {reviews.map(() => (
-            <Review />
+          {avocat.reviews.map((review, i) => (
+            <Review review={review} key={i} />
           ))}
         </div>
       </div>

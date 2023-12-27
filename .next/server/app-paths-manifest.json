@@ -1,9 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/joindre/page": "app/joindre/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/my-bookings/page": "app/my-bookings/page.js",
-  "/login/page": "app/login/page.js",
-  "/avocat/page": "app/avocat/page.js",
-  "/edit/page": "app/edit/page.js"
+  "/avocat/page": "app/avocat/page.js"
 }

@@ -9,18 +9,25 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@nextui-org/react";
+import RendezChoice from "./RendezChoice";
 
 export default function Rendez() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const days = [
-    "Dimanche",
-    "Lundi",
-    " Mardi",
-    "Mercredi",
-    "Jeudi",
-    "Vendredi",
-    "Samedi",
-  ];
+  const currentDate = new Date();
+  const generateCols = (currentDate: Date) => {
+    const cols = [];
+    for (let i = 0; i <= 7; i++) {
+      // add 24 hours to current date
+      cols.push(
+        new Date(
+          currentDate.getFullYear(),
+          currentDate.getMonth(),
+          currentDate.getDate() + i
+        )
+      );
+    }
+    return cols;
+  };
+  const cols = generateCols(currentDate);
   const horraires = [
     "08:00",
     "09:00",
@@ -48,14 +55,21 @@ export default function Rendez() {
               ))}
             </div>
 
-            {days.map((d) => (
+            {cols.map((col) => (
               <div className="">
-                <p className="text-sec1 h-8">{d}</p>
+                <p className="text-sec1 h-8">{col.toDateString()}</p>
                 {horraires.map((h) => (
-                  <Button
-                    onPress={onOpen}
-                    className="h-14 bg-primary1 mb-1 me-2 hover:bg-sec1 w-full active:bg-primary2 "
-                  ></Button>
+                  <RendezChoice
+                    date={
+                      new Date(
+                        col.getFullYear(),
+                        col.getMonth(),
+                        col.getDate(),
+                        parseInt(h.split(":")[0]),
+                        parseInt(h.split(":")[1])
+                      )
+                    }
+                  />
                 ))}
               </div>
             ))}
@@ -69,35 +83,6 @@ export default function Rendez() {
               <div className="w-4 h-4 me-2 bg-sec1"></div>
               <p className="text-sec1">Indisponible</p>
             </div>
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-              <ModalContent>
-                {(onClose) => (
-                  <>
-                    <ModalHeader className="flex flex-col gap-1">
-                      Etes-vous sure ?
-                    </ModalHeader>
-                    <ModalBody>
-                      <p>
-                        Do you confirm booking a meeting on frinday 24 of
-                        december at 8:00 ?
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color="danger" variant="light" onPress={onClose}>
-                        Annuler
-                      </Button>
-                      <Button
-                        color="primary"
-                        className="text-white"
-                        onPress={onClose}
-                      >
-                        Confirmer
-                      </Button>
-                    </ModalFooter>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
           </div>
         </div>
       </div>

@@ -1,22 +1,38 @@
 // survey type that has a name and a id
 
-export interface Survey {
+export type Booking = {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  date: string;
+  time: string;
   title: string;
-  id: string;
-  availableResponses: number;
-  allResponses: number;
-  duration: number;
-  price: number;
-}
+  speciality: string;
+  rating?: number;
+  comment?: string;
+};
+export type AccountType = "client" | "lawyer";
 
-export interface Question {
-  id: string;
-  survey: string;
-  text: string;
-}
+export type Lawyer = {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  photo?: string;
+  wilaya: string;
+  lng?: number;
+  lat?: number;
+  languages: string[];
+  specialities: string[];
+  rating: number;
+  reviews: Review[];
+};
 
-export interface Choice {
-  id: string;
-  question: string;
-  text: string;
-}
+export type Review = {
+  id: number;
+  reviewerId: string;
+  reviewerName: string;
+  rating: number;
+  comment: string;
+};
