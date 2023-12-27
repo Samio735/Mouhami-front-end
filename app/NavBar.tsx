@@ -1,6 +1,11 @@
 "use client";
 import {
+  Avatar,
   Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -42,10 +47,6 @@ export default function NavBar() {
       className="text-white "
     >
       <NavbarContent>
-        {/* <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        /> */}
         <Link href="/">
           <NavbarBrand className="flex font-medium text-lg">
             <svg
@@ -98,37 +99,48 @@ export default function NavBar() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+        {/* <NavbarItem className=" ">
           <Link href="/joindre">Joindre</Link>
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
+        <NavbarItem className=" ">
           <Link href="/login">Se connecter</Link>
-        </NavbarItem>
-        {/* <NavbarItem>
-          <Button as={Link} href="#" variant="solid">
-            Sign Up
-          </Button>
         </NavbarItem> */}
+
+        <NavbarItem>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button className="flex items-center gap-2 py-2" color="primary">
+                <Avatar
+                  src="https://i.pravvatar.cc/150?u=a04258114e29026302dkkkkkkkkkkkkkkkkkk"
+                  size="md"
+                  showFallback
+                  classNames={{ icon: "text-black" }}
+                />
+                <h2 className="">Said Nouasria</h2>
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem href="/my-bookings" key={"bookings"}>
+                Mes rendez-vous
+              </DropdownItem>
+              <DropdownItem key="edit" href={"/profile"}>
+                Mon profile
+              </DropdownItem>
+              <DropdownItem key="edit" href={"/edit"}>
+                Edit profile
+              </DropdownItem>
+              <DropdownItem
+                href="/"
+                key="logout"
+                className="text-danger"
+                color="danger"
+              >
+                Logout
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
       </NavbarContent>
-      {/* <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu> */}
     </Navbar>
   );
 }
