@@ -44,10 +44,10 @@ export default function Edit() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex  justify-center">
       <div className="py-10">
-        <div className="flex gap-8">
-          <div className="flex flex-col gap-4 w-full">
+        <div className="flex lg:flex-row flex-col gap-8">
+          <div className="flex flex-col  gap-4 w-full">
             <Input label="Nom" />
             <Input label="Prenom" />
             <Input label="Email" />

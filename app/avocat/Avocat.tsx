@@ -2,21 +2,21 @@
 
 import { Button } from "@nextui-org/react";
 import Review from "./Review";
-import { GoogleMap } from "react-google-maps";
-import withScriptjs from "react-google-maps/lib/withScriptjs";
-import withGoogleMap from "react-google-maps/lib/withGoogleMap";
+// import { GoogleMap } from "react-google-maps";
+// import withScriptjs from "react-google-maps/lib/withScriptjs";
+// import withGoogleMap from "react-google-maps/lib/withGoogleMap";
 import Link from "next/link";
 import { Lawyer } from "@/types";
 
-const Map = () => {
-  return (
-    <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{ lat: 36.752887, lng: 3.042048 }}
-    />
-  );
-};
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+// const Map = () => {
+//   return (
+//     <GoogleMap
+//       defaultZoom={10}
+//       defaultCenter={{ lat: 36.752887, lng: 3.042048 }}
+//     />
+//   );
+// };
+// const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function Avocat() {
   const avocat: Lawyer = {
@@ -73,12 +73,11 @@ export default function Avocat() {
     ],
   };
   const bgImage = avocat.photo ? `url(${avocat.photo})` : `url(/avatar.png)`;
-  console.log(avocat.photo);
   return (
     <div className=" flex flex-col items-center">
-      <div className="grid grid-cols-3 gap-20 max-w-[80vw] my-12">
+      <div className="grid lg:grid-cols-3 gap-6 lg:gap-20 max-w-[80vw] my-12">
         <div
-          className="border-4 relative border-primary1 w-full  text-lg"
+          className="border-4 relative h-[400px] border-primary1 w-full  text-lg"
           style={{
             backgroundImage: bgImage,
             backgroundSize: "cover",
@@ -151,20 +150,20 @@ export default function Avocat() {
           <div className="flex flex-col ">
             <p className="text-sec1 font-semibold mb-2">Localisation</p>
             <div className="border-4 border-primary1 w-full h-80">
-              <WrappedMap
+              {/* <WrappedMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100%` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
-              />
+              /> */}
             </div>
           </div>
         </div>
       </div>
       <div className="w-[80vw] mb-10">
         <p className="text-sec1 font-semibold mb-2">Evaluations</p>
-        <div className="grid grid-cols-3 gap-10 gap-y-7">
-          {avocat.reviews.map((review, i) => (
+        <div className="grid lg:grid-cols-3 gap-10 gap-y-7">
+          {avocat.reviews?.map((review, i) => (
             <Review review={review} key={i} />
           ))}
         </div>

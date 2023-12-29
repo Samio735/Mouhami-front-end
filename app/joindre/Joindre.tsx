@@ -65,7 +65,7 @@ export default function Joindre() {
 
           <Radio value="avocat">Un avocat</Radio>
         </RadioGroup>
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           <div className="flex flex-col gap-4 w-full">
             <Input label="Nom" />
             <Input label="Prenom" />

@@ -25,8 +25,8 @@ export type Lawyer = {
   lat?: number;
   languages: string[];
   specialities: string[];
-  rating: number;
-  reviews: Review[];
+  rating?: number;
+  reviews?: Review[];
 };
 
 export type Review = {

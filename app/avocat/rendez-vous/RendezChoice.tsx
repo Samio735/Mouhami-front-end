@@ -15,7 +15,7 @@ export default function RendezChoice({ date }: { date: Date }) {
     <>
       <Button
         onPress={onOpen}
-        className="h-14 bg-primary1 mb-1 me-2 hover:bg-sec1 w-full active:bg-primary2"
+        className="lg:h-14 h-10 bg-primary1 mb-1 me-2 hover:bg-sec1 w-full active:bg-primary2"
       ></Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>

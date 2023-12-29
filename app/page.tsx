@@ -1,10 +1,9 @@
-import { Button } from "@nextui-org/react";
-import Home from "./Home";
+import Hero from "./Hero";
 
 export default function page() {
   return (
     <div className=" bg-purple-50 ">
-      <Home></Home>
+      <Hero></Hero>
     </div>
   );
 }

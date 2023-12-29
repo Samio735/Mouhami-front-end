@@ -17,7 +17,7 @@ export default function Booking({
     setRating(rate);
   };
   return (
-    <div className="flex  p-6 justify-between shadow-sm ">
+    <div className="flex max-w[80vw] p-6 justify-between shadow-sm ">
       <div className="flex flex-col ">
         <p className="mb-2  font-medium text-gray-400">
           {booking.date} At {booking.time}
@@ -29,7 +29,7 @@ export default function Booking({
             {booking.speciality}
           </span>
         </h2>
-        <div className="flex mt-1 gap-10">
+        <div className="flex flex-wrap mt-1 gap-10">
           <div className="flex gap-2 items-center font-semibold">
             <Avatar
               src="https://i.pravvatar.cc/150?u=a04258114e29026302dkkkkkkkkkkkkkkkkkk"

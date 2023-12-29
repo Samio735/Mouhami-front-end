@@ -99,14 +99,14 @@ export default function NavBar() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        {/* <NavbarItem className=" ">
+        <NavbarItem className=" ">
           <Link href="/joindre">Joindre</Link>
         </NavbarItem>
         <NavbarItem className=" ">
           <Link href="/login">Se connecter</Link>
-        </NavbarItem> */}
+        </NavbarItem>
 
-        <NavbarItem>
+        {/* <NavbarItem>
           <Dropdown>
             <DropdownTrigger>
               <Button className="flex items-center gap-2 py-2" color="primary">
@@ -139,7 +139,7 @@ export default function NavBar() {
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
     </Navbar>
   );

@@ -78,7 +78,7 @@ export default function Search() {
   ];
   const ratings = ["1 +", "2 +", "3 +", "4 +", "5"];
   return (
-    <div className="flex flex-col gap-2 my-4">
+    <div className="flex flex-col gap-2 m-4">
       <div className="flex min-w-[70vw] border-primary1 ">
         <Input
           className="h-12 w-[80%]"

@@ -30,10 +30,10 @@ export default function MyBookings() {
       speciality: "Droit des affaires",
     },
   ];
-  const accountType: AccountType = "lawyer";
+  const accountType: AccountType = "client";
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <main className="flex flex-col w-[80vw]  flex-1 px-20 ">
+    <div className="flex flex-col items-center justify-center  py-2">
+      <main className="flex flex-col w-[80vw]  flex-1  ">
         <h1 className="text-xl font-semibold p-4 ">Mes Rendez-vous</h1>
         <div className="flex flex-col  max-w-4xl gap-6  ">
           {bookings.map((booking, index) => (

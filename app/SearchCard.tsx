@@ -1,23 +1,26 @@
+import { Lawyer } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SearchCard() {
+export default function SearchCard({ avocat }: { avocat: Lawyer }) {
+  const bgImage = avocat.photo ? `url(${avocat.photo})` : `url(/avatar.png)`;
+
   return (
     <Link
-      className="flex w-52  text-left min-w-[70vw] hover:shadow-lg active:shadow-inner  shadow-sm transition-all"
-      href={"/avocat/id"}
+      className="flex lg:flex-row flex-col  bg-default-100 text-left w-[70vw] hover:bg-default-200 active:bg-primary1 hover:scale-105   transition-all"
+      href={`/avocat/${avocat.id}`}
     >
-      <div className="w-80 h-40 overflow-hidden">
-        <Image
-          src={"/avatar.png"}
-          alt="avatar"
-          width={240}
-          height={140}
-        ></Image>
-      </div>
+      <div
+        className="lg:w-80 w-full h-40 overflow-hidden"
+        style={{
+          backgroundImage: bgImage,
+
+          backgroundPosition: "top",
+        }}
+      ></div>
       <div className="p-2 w-[80%]">
-        <div className="flex  gap-8 items-center py-4">
-          <h1 className="text-2xl font-semibold">Said Nouasria</h1>
+        <div className="lg:flex-row flex flex-col  gap-8 items-center py-4">
+          <h1 className="text-2xl font-semibold">{avocat.name}</h1>
           <div className="flex gap-2 items-center">
             <svg
               width="20"
@@ -49,7 +52,7 @@ export default function SearchCard() {
               </defs>
             </svg>
 
-            <h3 className="">Bejaia</h3>
+            <h3 className="">{avocat.wilaya}</h3>
           </div>
           <div className="flex gap-2 items-center">
             <svg
@@ -73,7 +76,14 @@ export default function SearchCard() {
               />
             </svg>
 
-            <h3 className="">Fr, Ar</h3>
+            <h3 className="">
+              {avocat.languages.map((lang, i) => (
+                <span className="mr-2">
+                  {lang.slice(0, 2)}
+                  {i < avocat.languages.length - 1 && ","}
+                </span>
+              ))}
+            </h3>
           </div>
           <div className="flex gap-2 items-center">
             <svg
