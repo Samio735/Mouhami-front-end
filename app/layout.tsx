@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 
 // Font files can be colocated inside of `app`
 

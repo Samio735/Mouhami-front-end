@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Search from "../Search";
+import Search from "../../components/Search";
 import { Button } from "@nextui-org/react";
 import Avocat from "./Avocat";
 
