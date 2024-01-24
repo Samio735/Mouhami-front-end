@@ -10,7 +10,7 @@ import {
 
 export default function RendezChoice({ date }: { date: Date }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
+  console.log(date);
   return (
     <>
       <Button

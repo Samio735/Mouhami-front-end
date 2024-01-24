@@ -1,51 +1,113 @@
 {
   "pages": {
-    "/avocat/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/avocat/page.js"
+    "/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/710-d07453db8d7e32bf.js",
+      "static/chunks/126-3f107271925b1d15.js",
+      "static/chunks/396-27e8c2e0352c7c11.js",
+      "static/chunks/754-07abb2fd7cccaba2.js",
+      "static/chunks/388-c063a9f853de1dad.js",
+      "static/chunks/app/page-38e729e44b2629f6.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/avocat/rendez-vous/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/avocat/rendez-vous/page.js"
-    ],
-    "/joindre/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/joindre/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/page.js"
-    ],
-    "/my-bookings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/my-bookings/page.css",
-      "static/chunks/app/my-bookings/page.js"
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/710-d07453db8d7e32bf.js",
+      "static/chunks/396-27e8c2e0352c7c11.js",
+      "static/chunks/386-a6a17c744362c60c.js",
+      "static/chunks/791-5efbc21b9dbef3d7.js",
+      "static/css/5ee8096a4d92e913.css",
+      "static/css/ddd5fc9fa53e99ab.css",
+      "static/chunks/app/layout-d1724dca47077344.js"
     ],
     "/edit/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/edit/page.js"
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/710-d07453db8d7e32bf.js",
+      "static/chunks/126-3f107271925b1d15.js",
+      "static/chunks/386-a6a17c744362c60c.js",
+      "static/chunks/754-07abb2fd7cccaba2.js",
+      "static/chunks/791-5efbc21b9dbef3d7.js",
+      "static/chunks/223-ddaf685f5b11f375.js",
+      "static/chunks/app/edit/page-79bd2aeac2345b4e.js"
+    ],
+    "/avocat/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/396-27e8c2e0352c7c11.js",
+      "static/chunks/app/avocat/page-4caabd45dcbb5234.js"
+    ],
+    "/joindre/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/710-d07453db8d7e32bf.js",
+      "static/chunks/126-3f107271925b1d15.js",
+      "static/chunks/386-a6a17c744362c60c.js",
+      "static/chunks/754-07abb2fd7cccaba2.js",
+      "static/chunks/791-5efbc21b9dbef3d7.js",
+      "static/chunks/223-ddaf685f5b11f375.js",
+      "static/chunks/app/joindre/page-23783e2fa6864236.js"
+    ],
+    "/profile/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/app/profile/page-3637375a949a3d4f.js"
+    ],
+    "/my-bookings/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/126-3f107271925b1d15.js",
+      "static/css/dfdeab7268d20d16.css",
+      "static/chunks/app/my-bookings/page-cae443ae9c69b625.js"
     ],
     "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/126-3f107271925b1d15.js",
+      "static/chunks/396-27e8c2e0352c7c11.js",
+      "static/chunks/app/login/page-5d04ba0e27207789.js"
+    ],
+    "/avocat/rendez-vous/page": [
+      "static/chunks/webpack-a3ef0e8af181dfd1.js",
+      "static/chunks/fd9d1056-76aadce26f555392.js",
+      "static/chunks/596-b28b650aa755bff1.js",
+      "static/chunks/main-app-0da8b94c3502825f.js",
+      "static/chunks/212-8d9c718a9e214795.js",
+      "static/chunks/880-8c73c0a1a377ae2e.js",
+      "static/chunks/710-d07453db8d7e32bf.js",
+      "static/chunks/386-a6a17c744362c60c.js",
+      "static/chunks/459-7e93741e04e96780.js",
+      "static/chunks/app/avocat/rendez-vous/page-5fd170cd1c8f2663.js"
     ]
   }
 }

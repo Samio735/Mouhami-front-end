@@ -1,0 +1,11 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/edit/page": "/edit",
+  "/avocat/page": "/avocat",
+  "/joindre/page": "/joindre",
+  "/profile/page": "/profile",
+  "/my-bookings/page": "/my-bookings",
+  "/login/page": "/login",
+  "/avocat/rendez-vous/page": "/avocat/rendez-vous"
+}
