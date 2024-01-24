@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import NavBar from "../components/NavBar";
 
 // Font files can be colocated inside of `app`
-
+// edit
 export const metadata: Metadata = {
   manifest: "/manifest.json",
   title: "Mouhami",
