@@ -1,5 +1,7 @@
 import { Button, Input } from "@nextui-org/react";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function Search() {
@@ -79,10 +81,14 @@ export default function Search() {
   ];
   const ratings = ["1 +", "2 +", "3 +", "4 +", "5"];
 
-  const [wilaya, setWilaya] = useState<string>("Wilaya");
-  const [language, setLanguage] = useState<string>("Langue");
-  const [speciality, setSpeciality] = useState<string>("Specialité");
-  const [rating, setRating] = useState<string>("Rating");
+  const [wilaya, setWilaya] = useState<string>("");
+  const [language, setLanguage] = useState<string>("");
+  const [speciality, setSpeciality] = useState<string>("");
+  const [rating, setRating] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-2 m-4">
       <div className="flex min-w-[70vw] border-primary1 ">
@@ -90,8 +96,29 @@ export default function Search() {
           className="h-12 w-[80%]"
           size="sm"
           placeholder="Type a name ..."
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          defaultValue={searchParams.get("name")?.toString()}
         ></Input>
-        <Button className="h-12 w-[20%] bg-primary1 text-white" variant="solid">
+
+        <Button
+          className="h-12 w-[20%] bg-primary1 text-white"
+          variant="solid"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams);
+            wilaya ? params.set("wilaya", wilaya) : params.delete("wilaya");
+            language
+              ? params.set("language", language)
+              : params.delete("language");
+            speciality
+              ? params.set("speciality", speciality)
+              : params.delete("speciality");
+            rating ? params.set("rating", rating) : params.delete("rating");
+            name ? params.set("name", name) : params.delete("name");
+            router.replace(`${pathname}?${params.toString()}`);
+          }}
+        >
           Search
         </Button>
       </div>
@@ -101,6 +128,10 @@ export default function Search() {
           className="max-w-xs"
           value={wilaya}
           size="sm"
+          onInputChange={(value) => {
+            setWilaya(value);
+          }}
+          defaultInputValue={searchParams.get("wilaya")?.toString()}
         >
           {wilayas.map((wilaya, index) => (
             <AutocompleteItem value={wilaya} key={index} color="primary">
@@ -113,9 +144,13 @@ export default function Search() {
           className="max-w-xs"
           value={language}
           size="sm"
+          onInputChange={(value) => {
+            setLanguage(value);
+          }}
+          defaultInputValue={searchParams.get("language")?.toString()}
         >
           {languages.map((language, index) => (
-            <AutocompleteItem value={language} key={index} color="primary">
+            <AutocompleteItem key={index} color="primary">
               {language}
             </AutocompleteItem>
           ))}
@@ -125,6 +160,10 @@ export default function Search() {
           className="max-w-xs"
           value={speciality}
           size="sm"
+          onInputChange={(value) => {
+            setSpeciality(value);
+          }}
+          defaultInputValue={searchParams.get("speciality")?.toString()}
         >
           {specialities.map((speciality, index) => (
             <AutocompleteItem value={speciality} key={index} color="primary">
@@ -137,6 +176,10 @@ export default function Search() {
           className="max-w-xs"
           value={rating}
           size="sm"
+          onInputChange={(value) => {
+            setRating(value);
+          }}
+          defaultInputValue={searchParams.get("rating")?.toString()}
         >
           {ratings.map((rating, index) => (
             <AutocompleteItem value={rating} key={index} color="primary">

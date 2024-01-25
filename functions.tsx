@@ -9,6 +9,31 @@ export async function getAvocats() {
   return avocats;
 }
 
+export async function searchAvocats(
+  wilaya: string = "",
+  speciality: string = "",
+  language: string = "",
+  rating: string = "",
+  name: string = ""
+) {
+  // post request to backend
+  const res = await fetch(`${BACKEND_URL}/lawyers-search`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      wilaya,
+      speciality,
+      language,
+      rating,
+      name,
+    }),
+  });
+  const avocats: Lawyer[] = await res.json();
+  return avocats;
+}
+
 export async function getAvocat(id: string) {
   const res = await fetch(`${BACKEND_URL}/lawyer-detailed/${id}`, {
     cache: "no-store",
