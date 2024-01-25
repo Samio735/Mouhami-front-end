@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import NavBar from "../components/NavBar";
+import { ReactQueryClientProvider } from "@/components/ReactQueryClientProvider";
 
 // Font files can be colocated inside of `app`
 // edit
@@ -22,11 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body>
-        <NavBar />
-        <div className="text-black">{children}</div>
-      </body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en" className={poppins.className}>
+        <body>
+          <NavBar />
+          <div className="text-black">{children}</div>
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   );
 }
