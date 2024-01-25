@@ -1,5 +1,6 @@
 import { Button, Input } from "@nextui-org/react";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
+import { useState } from "react";
 
 export default function Search() {
   const wilayas = [
@@ -77,6 +78,11 @@ export default function Search() {
     "Droits de l'homme",
   ];
   const ratings = ["1 +", "2 +", "3 +", "4 +", "5"];
+
+  const [wilaya, setWilaya] = useState<string>("Wilaya");
+  const [language, setLanguage] = useState<string>("Langue");
+  const [speciality, setSpeciality] = useState<string>("Specialité");
+  const [rating, setRating] = useState<string>("Rating");
   return (
     <div className="flex flex-col gap-2 m-4">
       <div className="flex min-w-[70vw] border-primary1 ">
@@ -90,28 +96,48 @@ export default function Search() {
         </Button>
       </div>
       <div className="flex min-w-[70vw] gap-2 ">
-        <Autocomplete label="Wilaya" className="max-w-xs" size="sm">
+        <Autocomplete
+          label="Wilaya"
+          className="max-w-xs"
+          value={wilaya}
+          size="sm"
+        >
           {wilayas.map((wilaya, index) => (
             <AutocompleteItem value={wilaya} key={index} color="primary">
               {wilaya}
             </AutocompleteItem>
           ))}
         </Autocomplete>
-        <Autocomplete label="Langue" className="max-w-xs" size="sm">
+        <Autocomplete
+          label="Langue"
+          className="max-w-xs"
+          value={language}
+          size="sm"
+        >
           {languages.map((language, index) => (
             <AutocompleteItem value={language} key={index} color="primary">
               {language}
             </AutocompleteItem>
           ))}
         </Autocomplete>
-        <Autocomplete label="Specialité" className="max-w-xs" size="sm">
+        <Autocomplete
+          label="Specialité"
+          className="max-w-xs"
+          value={speciality}
+          size="sm"
+        >
           {specialities.map((speciality, index) => (
             <AutocompleteItem value={speciality} key={index} color="primary">
               {speciality}
             </AutocompleteItem>
           ))}
         </Autocomplete>
-        <Autocomplete label="Rating" className="max-w-xs" size="sm">
+        <Autocomplete
+          label="Rating"
+          className="max-w-xs"
+          value={rating}
+          size="sm"
+        >
           {ratings.map((rating, index) => (
             <AutocompleteItem value={rating} key={index} color="primary">
               {rating}

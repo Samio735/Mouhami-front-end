@@ -1,14 +1,16 @@
 // survey type that has a name and a id
 
 export type Booking = {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
+  id?: number;
+  name?: string;
+  email?: string;
+  phone?: string;
   date: string;
   time: string;
-  title: string;
-  speciality: string;
+  lawyer_id: string;
+  client_id: string;
+  title?: string;
+  speciality?: string;
   rating?: number;
   comment?: string;
 };
@@ -31,8 +33,17 @@ export type Lawyer = {
 
 export type Review = {
   id: number;
-  reviewerId: string;
+  reviewer: User;
   reviewerName: string;
   rating: number;
   comment: string;
+};
+
+export type User = {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  photo?: string;
 };

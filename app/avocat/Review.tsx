@@ -4,7 +4,9 @@ export default function Review({ review }: { review: Review }) {
   return (
     <div className="w-full border border-primary1 p-4  flex flex-col gap-2">
       <div className="flex gap-1 items-center">
-        <h2 className="font-semibold me-2">{review.reviewerName}</h2>
+        <h2 className="font-semibold me-2">
+          {review.reviewer.first_name} {review.reviewer.last_name}
+        </h2>
         <svg
           width="18"
           height="17"
