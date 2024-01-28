@@ -17,16 +17,17 @@ export type Booking = {
 export type AccountType = "client" | "lawyer";
 
 export type Lawyer = {
-  id: number;
+  id?: number;
   name: string;
   email: string;
   phone: string;
   photo?: string;
   wilaya: string;
+  location?: string;
   lng?: number;
   lat?: number;
-  languages: string[];
-  specialities: string[];
+  languages: String[];
+  specialities: String[];
   rating?: number;
   reviews?: Review[];
 };

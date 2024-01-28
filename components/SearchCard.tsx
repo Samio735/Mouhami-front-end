@@ -102,7 +102,7 @@ export default function SearchCard({ avocat }: { avocat: Lawyer }) {
               />
             </svg>
 
-            <h3 className="">4,8/5</h3>
+            <h3 className="">{avocat.rating}</h3>
           </div>
         </div>
         <div className="flex gap-2">
@@ -124,9 +124,12 @@ export default function SearchCard({ avocat }: { avocat: Lawyer }) {
             />
           </svg>
           <h2 className="text">
-            Lorem ipsum dolor sit amet consectetur. Amet facilisis tellus id
-            quam pulvinar. Arcu et et a non odio vestibulum. Mauris adipiscing
-            etiam luctus felis.
+            {avocat.specialities.map((spec, i) => (
+              <span className="mr-2">
+                {spec}
+                {i < avocat.specialities.length - 1 && ","}
+              </span>
+            ))}
           </h2>
         </div>
       </div>

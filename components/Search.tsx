@@ -55,7 +55,7 @@ export default function Search() {
     "Ghardaïa",
     "Relizane",
   ];
-  const languages = ["Arabe", "Français", "Anglais"];
+  const languages = ["arabic", "french", "english"];
   const specialities = [
     "Droit administratif",
     "Droit Affaires",
@@ -95,7 +95,7 @@ export default function Search() {
         <Input
           className="h-12 w-[80%]"
           size="sm"
-          placeholder="Type a name ..."
+          placeholder="Tape un nom  ..."
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -117,9 +117,10 @@ export default function Search() {
             rating ? params.set("rating", rating) : params.delete("rating");
             name ? params.set("name", name) : params.delete("name");
             router.replace(`${pathname}?${params.toString()}`);
+            router.refresh();
           }}
         >
-          Search
+          Rechercher
         </Button>
       </div>
       <div className="flex min-w-[70vw] gap-2 ">
@@ -172,7 +173,7 @@ export default function Search() {
           ))}
         </Autocomplete>
         <Autocomplete
-          label="Rating"
+          label="Evaluation"
           className="max-w-xs"
           value={rating}
           size="sm"

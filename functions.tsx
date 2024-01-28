@@ -17,7 +17,7 @@ export async function searchAvocats(
   name: string = ""
 ) {
   // post request to backend
-  const res = await fetch(`${BACKEND_URL}/lawyers-search`, {
+  const res = await fetch(`${BACKEND_URL}/search-lawyers`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -61,4 +61,58 @@ export async function postNewBooking(booking: Booking, id: string) {
   const newBooking: Booking = await res.json();
   console.log(newBooking);
   return newBooking;
+}
+
+export async function registerClient(
+  email: string,
+  username: string,
+  first_name: string,
+  last_name: string,
+  password1: string,
+  password2: string
+) {
+  const res = await fetch(`${BACKEND_URL}/register/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      username,
+      password1,
+      password2,
+      first_name,
+      last_name,
+    }),
+  });
+  const data = await res.json();
+  return data;
+}
+
+export async function registerAvocat(
+  email: string,
+  username: string,
+  first_name: string,
+  last_name: string,
+  password1: string,
+  password2: string,
+  avocat: Lawyer
+) {
+  const res = await fetch(`${BACKEND_URL}/register-lawyer/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      username,
+      password1,
+      password2,
+      first_name,
+      last_name,
+      Avocat_data: avocat,
+    }),
+  });
+  const data = await res.json();
+  return data;
 }

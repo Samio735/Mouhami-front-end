@@ -4,19 +4,17 @@ import Hero from "../components/Hero";
 export default async function page({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams?: {
+    wilaya?: string;
+    speciality?: string;
+    language?: string;
+    rating?: string;
+    name?: string;
+  };
 }) {
-  const avocats = await searchAvocats(
-    searchParams["wilaya"]?.toString(),
-    searchParams["speciality"]?.toString(),
-    searchParams["language"]?.toString(),
-    searchParams["rating"]?.toString(),
-    searchParams["name"]?.toString()
-  );
-
   return (
     <div className=" bg-purple-50 ">
-      <Hero avocats={avocats}></Hero>
+      <Hero searchParams={searchParams}></Hero>
     </div>
   );
 }
